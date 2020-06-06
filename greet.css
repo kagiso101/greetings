@@ -1,0 +1,32 @@
+@media(min-width:800px) {
+
+    .clearfix {
+        overflow: auto;
+        zoom: 1;
+      }
+      .container {
+        text-align: center;
+        padding: 2em; 
+      }
+    .header {
+        text-align: center;
+        padding: 2em;
+        border: 2em;
+    }
+    .main {
+        text-align: center;
+    }
+    .number1 {
+        padding: 1.5em;
+        border: 2em;
+    }
+    .number2 {
+        border: 2em;
+        text-align: center;
+    }
+    .number3 {
+        text-align: center;
+        padding: 2em;
+        border: 2em;
+    }
+}
