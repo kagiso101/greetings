@@ -6,10 +6,10 @@ describe("The Greet function", function () {
         assert.equal("Hello, Kagiso", greet.greetUser("Kagiso", "English"));
     });
     //greet in mandrin
-    it("should greet Kagiso in Mandrin", function () {
+    it("should greet Kagiso in French", function () {
         var greet = GreetFactory()
 
-        assert.equal("Nǐ hǎo, Kagiso", greet.greetUser("Kagiso", "Mandrin"));
+        assert.equal("Bonjour , Kagiso", greet.greetUser("Kagiso", "French"));
     });
     //greet in spanish
     it("should greet Kagiso in Spanish", function () {
@@ -27,7 +27,7 @@ describe("The GreetCounter function", function () {
     it("should return the total number of users greeted in English", function () {
         var greet = GreetFactory();
 
-        greet.greetUser("Siphiwe", "English")//takes 2 parameters name and language
+        greet.greetUser("Josh", "English")//takes 2 parameters name and language
         greet.greetUser("Kagiso", "English")
 
         assert.equal(2, greet.getGreetCounter());//how many times the greetUser function occoured
@@ -37,15 +37,15 @@ describe("The GreetCounter function", function () {
 
         greet.greetUser("Joe", "Spanish")
         greet.greetUser("Kagiso", "Spanish")
-        greet.greetUser("Siphiwe", "Spanish")
+        greet.greetUser("Josh", "Spanish")
         greet.greetUser("Jill", "Spanish")
 
         assert.equal(4, greet.getGreetCounter());
     });
-    it("should return the total number of users greeted in Mandrin", function () {
+    it("should return the total number of users greeted in French", function () {
         var greet = GreetFactory();
 
-        greet.greetUser("Joe", "Mandrin")
+        greet.greetUser("Joe", "French")
 
         assert.equal(1, greet.getGreetCounter());
     });

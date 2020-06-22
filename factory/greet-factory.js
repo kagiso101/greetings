@@ -13,8 +13,8 @@ function GreetFactory(stored) {
             case "Spanish"://case of spanish
                 return "Hola, " + name;// return hola & name entered 
 
-            case "Mandrin"://case of mandrin
-                return "Nǐ hǎo, " + name;//return ni hao & name entered 
+            case "French"://case of mandrin
+                return "Bonjour , " + name;//return ni hao & name entered 
 
             default:
                 return "Hello, " + name;

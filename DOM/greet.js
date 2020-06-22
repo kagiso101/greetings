@@ -8,10 +8,10 @@ window.addEventListener("DOMContentLoaded", function() {
 
     var stored = localStorage['greetedUsers'] ? JSON.parse(localStorage['greetedUsers']) : {};
 
-    var GreetFactory = greetFactory(stored);
+    var greetings = GreetFactory(stored);
 
     window.addEventListener("load", function() {
-        total.innerHTML = GreetFactory.getGreetCount();
+        total.innerHTML = greetings.getGreetCounter();
     });
 
     //greet buttons event listener 
@@ -20,11 +20,11 @@ window.addEventListener("DOMContentLoaded", function() {
         var radioBtn = document.querySelector("input[name='selector']:checked");
         if (radioBtn) {
             var language = radioBtn.value;
-            var name = GreetFactory.getNameFromInput(input)
+            var name = greetings.getNameFromInput(input)
             if (name !== "") {
-                message.innerHTML = GreetFactory.greetUser(name, language)
-                total.innerHTML = GreetFactory.getGreetCounter();
-                localStorage['greetedUsers'] = JSON.stringify(GreetFactory.getAllUsers());
+                message.innerHTML = greetings.greetUser(name, language)
+                total.innerHTML = greetings.getGreetCounter();
+                localStorage['greetedUsers'] = JSON.stringify(greetings.getAllUsers());
 
             } else {
                 message.innerHTML = "no name entered."
@@ -36,8 +36,8 @@ window.addEventListener("DOMContentLoaded", function() {
 
     // this is the reset buttons event listener
     resetBtn.addEventListener("click", function() {
-        GreetFactory.resetBtn();
-        GreetFactory.resetBtn();
+        greetings.resetBtn();
+        greetings.resetBtn();
         location.reload();
     });
 });

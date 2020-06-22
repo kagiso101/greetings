@@ -17,6 +17,7 @@
         text-align: center;
     }
     .number1 {
+        text-align: center;
         padding: 1.5em;
         border: 2em;
     }
@@ -28,5 +29,9 @@
         text-align: center;
         padding: 2em;
         border: 2em;
+    }
+    .number4 {
+        text-align: center;
+        padding-bottom: 2em;
     }
 }

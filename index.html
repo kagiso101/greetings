@@ -1,72 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>Hello, World!</title>
-	<link rel="stylesheet" type="text/css" href="greet.css">
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+    <link rel="stylesheet" href="greet.css">
 </head>
 
 <body bgcolor="DDDDDD">
-	<div class="container">
-		<div class="header">
-			<h1>Greet counter</h1>
-		</div>
+    <div class="main">
+        <div class="number1">
+            <h2>Greetings Counter</h2>
+        </div>
+        <div class="number2">
+            <input type="text" name="" id="inputElements" placeholder="Enter your name">
+            <h1 id="counter"></h1>
+            <div class="number3">
+                <label>
+                    <input type="radio" name="selector" value="english">English
+                </label>
+                <label>
+                    <input type="radio" name="selector" value="French">French
+                </label>
+                <label>
+                    <input type="radio" name="selector" value="Spanish">Spanish
+                </label>
+            </div>
+        </div>
+        <div class="number4">
+            <button id="greetButton">greet</button>
+            <h1 id="txtBox"></h1>
 
-
-
-		<div class="main">
-			<div class="number1">
-				<input class="nameString" name="string" id="name" placeholder="enter your name here" value="">
-
-
-
-			</div>
-
-
-			<div class="number2">
-				<button class="greetBtn" id="greet">Greet Me!</button>
-			</div>
-
-
-			<div class="number3">
-				<input type="radio" name="langSelected" class="langSelectedRadio" value="English" checked>
-				<span class="label-body">English</span>
-				</label>
-
-				<input type="radio" name="langSelected" class="langSelectedRadio" value="Spanish">
-				<span class="label-body">Spanish</span>
-				</label>
-
-				<label class="">
-					<input type="radio" name="langSelected" class="langSelectedRadio" value="Mandarin">
-					<span class="label-body">Mandarin</span>
-			</div>
-
-			
-
-			
-			<div class="number4">
-				<input class="display" id="display">
-				<h1 id="theCount"></h1>
-			</div>
-
-			<div class= "theGreet">
-				<p></p>
-			</div>
-			<div class="number5">
-				<button class="clearBtn" id="clear">Clear</button>
-			</div>
-		</div>
-
-		<div class="footer">
-
-		</div>
-	</div>
-
+            <button id="resetButton">reset</button>
+        </div>
+    </div>
 </body>
-
-<script src="greet-factory.js"></script>
-<script src="greet.js"></script>
+<script src="factory/greet-factory.js"></script>
+<script src="DOM/greet.js"></script>
 
 </html>
