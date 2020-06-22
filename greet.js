@@ -1,33 +1,43 @@
-var nameString = document.querySelector(".nameString")
+window.addEventListener("DOMContentLoaded", function() {
 
-var greetBtn = document.querySelector(".greetBtn")
+    var inputBox = document.getElementById("inputElements")
+    var greetBtn = document.getElementById("greetButton")
+    var message = document.getElementById("txtBox")
+    var total = document.getElementById("counter")
+    var resetBtn = document.getElementById("resetButton")
 
-var clearBtn = document.querySelector(".clearBtn")
+    var stored = localStorage['greetedUsers'] ? JSON.parse(localStorage['greetedUsers']) : {};
 
-var langSelectedRadio = document.querySelector(".langSelectedRadio")
+    var GreetFactory = greetFactory(stored);
 
-var display = document.querySelector(".display")
+    window.addEventListener("load", function() {
+        total.innerHTML = GreetFactory.getGreetCount();
+    });
 
-var counter = 0
+    //greet buttons event listener 
+    greetBtn.addEventListener("click", function() {
+        var input = inputBox.value;
+        var radioBtn = document.querySelector("input[name='selector']:checked");
+        if (radioBtn) {
+            var language = radioBtn.value;
+            var name = GreetFactory.getNameFromInput(input)
+            if (name !== "") {
+                message.innerHTML = GreetFactory.greetUser(name, language)
+                total.innerHTML = GreetFactory.getGreetCounter();
+                localStorage['greetedUsers'] = JSON.stringify(GreetFactory.getAllUsers());
 
-function greetMeBtnClicked() {
-
-    var lang = langSelectedRadio.value
-    var nameEntered = nameString.value;
-
-    for (var i = 0; i < nameEntered.length; i++) {
-        var name = nameEntered[i]
-        if (lang === English) {
-            ("Hello" + name)
+            } else {
+                message.innerHTML = "no name entered."
+            }
+        } else {
+            message.innerHTML = "please select language."
         }
-        else if (lang === Spanish) {
-            ("Ola " + name)
-        }
-        else if (lang === Mandarin) {
-            ("你好 " + name)
-        }
-    }
-}
+    });
 
-
-greetBtn.addEventListener('click', greetMeBtnClicked);
+    // this is the reset buttons event listener
+    resetBtn.addEventListener("click", function() {
+        GreetFactory.resetBtn();
+        GreetFactory.resetBtn();
+        location.reload();
+    });
+});
