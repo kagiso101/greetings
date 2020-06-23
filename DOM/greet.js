@@ -37,7 +37,6 @@ window.addEventListener("DOMContentLoaded", function() {
     // this is the reset buttons event listener
     resetBtn.addEventListener("click", function() {
         greetings.resetBtn();
-        greetings.resetBtn();
         location.reload();
     });
 });
