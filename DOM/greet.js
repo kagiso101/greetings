@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("DOMContentLoaded", function () {
 
     var inputBox = document.getElementById("inputElements")
     var greetBtn = document.getElementById("greetButton")
@@ -10,12 +10,12 @@ window.addEventListener("DOMContentLoaded", function() {
 
     var greetings = GreetFactory(stored);
 
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
         total.innerHTML = greetings.getGreetCounter();
     });
 
     //greet buttons event listener 
-    greetBtn.addEventListener("click", function() {
+    greetBtn.addEventListener("click", function () {
         var input = inputBox.value;
         var radioBtn = document.querySelector("input[name='selector']:checked");
         if (radioBtn) {
@@ -32,10 +32,13 @@ window.addEventListener("DOMContentLoaded", function() {
         } else {
             message.innerHTML = "please select language."
         }
+        setTimeout(function () {
+            message.innerHTML = ""
+        }, 3000)
     });
 
     // this is the reset buttons event listener
-    resetBtn.addEventListener("click", function() {
+    resetBtn.addEventListener("click", function () {
         greetings.resetBtn();
         location.reload();
     });

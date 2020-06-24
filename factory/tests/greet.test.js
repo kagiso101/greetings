@@ -67,14 +67,38 @@ describe("The getAllUsers function", function () {
 
         assert.equal(1, greet.getGreetCounter());
     });
-    describe("The getNameFromInput function", function () {
-        it("should return a name without numbers or special characters", function () {
-            var greet = GreetFactory()
-            //uses  reguar expression to remove numbers from string
-            assert.equal("Kagiso", greet.getNameFromInput("k655a6456g64i53s35o6"));
-            assert.equal("Sean", greet.getNameFromInput("s453e867a754n86475"));
 
-            assert.equal("", greet.getNameFromInput(""));
-        });
+    it("should return one if clicked one for Max in French", function () {
+        var greet = GreetFactory();
+
+        greet.greetUser("Max", "French")
+
+        assert.equal(1, greet.getGreetCounter());
+    });
+});
+describe("The getNameFromInput function", function () {
+    it("should return a name without special characters", function () {
+        var greet = GreetFactory()
+        //uses  reguar expression to remove numbers from string
+        assert.equal("Kagiso", greet.getNameFromInput("k655a6#$^()456g64i53s35o6"));
+        assert.equal("Sean", greet.getNameFromInput("s453e8!@#$%^&*(67a754n86475"));
+
+        assert.equal("", greet.getNameFromInput(""));
+    });
+    it("should return a name without number characters", function () {
+        var greet = GreetFactory()
+        //uses  reguar expression to remove numbers from string
+        assert.equal("Kagiso", greet.getNameFromInput("k655a6456g64i53s35o6"));
+        assert.equal("Sean", greet.getNameFromInput("s453e867a754n86475"));
+
+        assert.equal("", greet.getNameFromInput(""));
+    });
+    it("should return a name without numbers or special characters", function () {
+        var greet = GreetFactory()
+        //uses  reguar expression to remove numbers from string
+        assert.equal("Kagiso", greet.getNameFromInput("k655a645@#$%^6g64i53s35o6"));
+        assert.equal("Sean", greet.getNameFromInput("s453e867a75@#$%^&*4n86475"));
+
+        assert.equal("", greet.getNameFromInput(""));
     });
 });
